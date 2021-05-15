@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+ 
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 90px;
+    z-index: 10000;
+    transition: 0.6s;
+}
+ 
+header .logga{
+    position: relative;
+    font-weight: 800;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.6s;
+}
+ 
+header #toggle{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+ 
+header #toggle::before{
+    content: '';
+    position: absolute;
+    top: 6.5px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+}
+ 
+header #toggle::after{
+    content: '';
+    position: absolute;
+    bottom: 6.5px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+}
+    
+.main.active header #toggle::before{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+ 
+.main.active header #toggle::after{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+ 
+.main{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background: url(sky_background.jpeg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    transition: 0.6s;
+    z-index: 2;
+}
+ 
+.main.active{
+    transform: translateX(-300px);
+}
+ 
+#nav{
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 300px;
+    height: 100vh;
+    background: #47a594;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    transition: 0.6s;
+}
+ 
+#nav.active{
+    right: 0;
+}
+ 
+#nav ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+ 
+#nav ul li a{
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+ 
+.innehåll{
+    max-width: 550px;
+}
+ 
+.innehåll h2{
+    font-size: 4rem;
+}
+ 
+.innehåll p{
+    font-size: 1.5rem;
+    font-weight: 250;
+}
+ 
+.innehåll a{
+    position: relative;
+    display: inline-block;
+    margin-top: 25px;
+    background: #055958;
+    color:#47a594;
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+ 
+@media (max-width:767px){
+    header{
+        padding: 25px 45px;
+    }
+    .main{
+        padding: 100px 50px 150px;
+    }
+    .main h2{
+        font-size: 1.8rem;
+    }
+    .main .innehåll p,
+    .main .innehåll a
+    {
+        font-size: 1rem;
+    }
+    .main.active{
+        transform: translateX(-250px);
+    }
+    #nav{
+        width: 250px;
+    }
+    #nav ul li a{
+        font-size: 1.5rem;
+        margin: 5px 0;
+    }
+}
+ 
+@media (max-width:320px){
+    header{
+        padding: 25px 45px;
+    }
+    .main{
+        padding: 100px 50px 150px;
+    }
+    .main h2{
+        font-size: 1.8rem;
+    }
+    .main .innehåll p,
+    .main .innehåll a
+    {
+        font-size: 1rem;
+    }
+    .main.active{
+        transform: translateX(-250px);
+    }
+    #nav{
+        width: 250px;
+    }
+    #nav ul li a{
+        font-size: 1.5rem;
+        margin: 5px 0;
+    }
+}

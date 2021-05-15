@@ -1,0 +1,194 @@
+*{
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width: 37vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);   
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1e221f;
+}
+
+.huvud_container{
+    position: relative;    
+}
+
+.huvud_container .huvud_kort{
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #528c75;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.huvud_container .huvud_kort::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #99b88f;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.huvud_container .huvud_kort:hover::before{
+    clip-path: circle(270px at 80% -20%);
+}
+
+.huvud_container .huvud_kort::after{
+    content: 'AirMax';
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 11.5rem;
+    font-weight: 800;
+    font-style: italic;
+    color: rgb(255,255,255,0.20);
+}
+
+.huvud_container .huvud_kort .img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.6s;
+}
+
+.huvud_container .huvud_kort:hover .img{
+    top: 0%;
+    transform: translateY(0%);
+}
+
+.innehåll{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.huvud_kort:hover .innehåll{
+    height: 210px;
+}
+
+.innehåll h2{
+    position: relative;
+    font-weight: 650;
+    letter-spacing: 1px;
+    color: #d8ddc4;
+}
+
+.innehåll .färg,
+.innehåll .storlek{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.huvud_kort:hover .innehåll .storlek{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.huvud_kort:hover .innehåll .färg{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+.innehåll .färg h3,
+.innehåll .storlek h3{
+    color: #d8ddc4;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 8px;
+}
+
+.innehåll .storlek span{
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 14px;
+    display: inline-block;
+    color: #000;
+    background: #d8ddc4;
+    margin: 0 5px;
+    transition: 0.6s;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.innehåll .storlek span:hover{
+    background: #99b88f;
+}
+
+.innehåll .färg span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.innehåll .färg span:nth-child(2){
+    background: #bdc3c7; 
+    background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); 
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+}
+
+.innehåll .färg span:nth-child(3){
+    background: #373b44; 
+    background: -webkit-linear-gradient(to right, #373b44, #4286f4);
+    background: linear-gradient(to right, #373b44, #4286f4);
+}
+
+.innehåll .färg span:nth-child(4){
+    background: #556270; 
+    background: -webkit-linear-gradient(to right, #556270, #ff6b6b); 
+    background: linear-gradient(to right, #556270, #ff6b6b);
+}
+
+.innehåll a{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d8ddc4;
+    border-radius: 3px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    transform: translateY(50px);
+    transition: 0.6s;
+    opacity: 0;
+}
+
+.huvud_kort:hover .innehåll a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.7s;
+}
